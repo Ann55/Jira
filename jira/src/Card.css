@@ -1,0 +1,9 @@
+.card-container{
+    display: flex;
+    background-color: #f2f7ff;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.title{
+    text-align: left;
+}

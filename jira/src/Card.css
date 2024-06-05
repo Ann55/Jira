@@ -3,6 +3,8 @@
     background-color: #f2f7ff;
     flex-direction: column;
     flex-wrap: wrap;
+    height: 100px;
+    cursor: pointer;
 }
 .title{
     text-align: left;

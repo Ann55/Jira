@@ -1,13 +1,23 @@
+import React from "react";
+import { useDroppable } from "@dnd-kit/core";
 import "./BoardColumn.css";
-
 interface BoardColumnProps {
-  title: string;
+  id: any;
+  title: any;
+  children: React.ReactNode;
 }
-export default function BoardColumn({ title }: BoardColumnProps) {
+export function BoardColumn(props: BoardColumnProps) {
+  const { isOver, setNodeRef } = useDroppable({
+    id: props.id,
+  });
+  const style = {
+    color: isOver ? "green" : undefined,
+  };
+
   return (
-    <div className="column">
-      <div className="column-title">{title}</div>
-      <div className="ticket-space"></div>
+    <div className="column" ref={setNodeRef} style={style}>
+      <div className="column-title">{props.title}</div>
+      <p>{props.children}</p>
     </div>
   );
 }
